@@ -36,8 +36,17 @@ while running:
     # faire disparaitre l'écrans 
     screen.fill((0, 0, 0))
 
+
+    #creer de la graviter 
     speed[1] += gravity
     Player_1 = Player_1.move(speed)
+
+    # transformer le screen en rect 
+    screen_rect = screen.get_rect()
+    # empeche le player de sortir de l'ecrans 
+    if not screen_rect.contains(Player_1):
+        Player_1.clamp_ip(screen_rect) 
+        
 
     # Afficher le boutton sur l'écrans 
     pygame.draw.rect(screen, RED, button_rect)
