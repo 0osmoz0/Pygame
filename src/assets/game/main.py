@@ -29,13 +29,13 @@ while running:
 
     # gestion des mouvement
     if keys[pygame.K_UP]:
-        player.move(0, -player.speed)
-    if keys[pygame.K_DOWN]:
-        player.move(0, player.speed)
-    if keys[pygame.K_LEFT]:
-        player.move(-player.speed, 0)
-    if keys[pygame.K_RIGHT]:
-        player.move(player.speed, 0)
+        player.move(0, -player.speed, "up")
+    elif keys[pygame.K_DOWN]:
+        player.move(0, player.speed, "down")
+    elif keys[pygame.K_LEFT]:
+        player.move(-player.speed, 0, "left")
+    elif keys[pygame.K_RIGHT]:
+        player.move(player.speed, 0, "right")
         
 
 
