@@ -10,8 +10,13 @@ class Player(object):
         self.image = pygame.image.load(os.path.join("assets", "pacman-art", "pacman-right", "1.png"))
 
         # on creer un rect a partir de l'image 
-        self.rect = self.image.get_rect()
-        self.rect.center = (x, y)
+        self.image = pygame.transform.scale(
+           self.image, (64, 64)
+        )
+        self.rect = self.image.get_rect(center=(x, y))
+
+        self.w = 64
+        self.h = 64
 
     # Afficher le player 
     def draw(self, screen):
