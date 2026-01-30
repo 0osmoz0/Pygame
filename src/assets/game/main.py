@@ -9,8 +9,10 @@ screen = pygame.display.set_mode((1920, 1080), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 running = True 
 
-
+# position (x, y) du player
 player = Player(960, 590)
+
+
 
 
 while running:
@@ -21,6 +23,21 @@ while running:
             
     # faire disparaitre l'écrans 
     screen.fill((0, 0, 0))
+
+    #gestion du clavier
+    keys = pygame.key.get_pressed()
+
+    # gestion des mouvement
+    if keys[pygame.K_UP]:
+        player.move(0, -player.speed)
+    if keys[pygame.K_DOWN]:
+        player.move(0, player.speed)
+    if keys[pygame.K_LEFT]:
+        player.move(-player.speed, 0)
+    if keys[pygame.K_RIGHT]:
+        player.move(player.speed, 0)
+        
+
 
     # afficher le player (pacman)
     player.draw(screen)

@@ -18,9 +18,19 @@ class Player(object):
         self.w = 64
         self.h = 64
 
+        self.speed = 5
+
     # Afficher le player 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
+    
+    def move(self, dx, dy):
+        self.rect.x += dx
+        self.rect.y += dy
+       
+        
+        
+        
 
         
 
